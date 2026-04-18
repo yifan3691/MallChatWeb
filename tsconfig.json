@@ -5,9 +5,10 @@
     "baseUrl": ".",
     "paths": { "@/*": ["./src/*"] },
     "isolatedModules": false,
+    "lib": ["ES2019", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "vue/jsx"],
     "ignoreDeprecations": "5.0",
     "verbatimModuleSyntax": true
   },
-  "lib": ["WebWorker"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
