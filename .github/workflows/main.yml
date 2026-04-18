@@ -15,7 +15,7 @@ concurrency:
 
 env:
   NODE_VERSION: 18
-  PNPM_VERSION: 8.15.8
+  PNPM_VERSION: 10.8.0
   TARGET_PATH: /opt/1panel/www/sites/mallchat
 
 jobs:
