@@ -1,4 +1,7 @@
 import type {
+  AuthLoginReq,
+  AuthLoginResType,
+  AuthRegisterReq,
   BadgeType,
   CacheBadgeItem,
   CacheBadgeReq,
@@ -28,6 +31,10 @@ const putRequest = <T>(url: string, params?: any) => alovaIns.Put<T, unknown>(ur
 const deleteRequest = <T>(url: string, params?: any) => alovaIns.Delete<T, unknown>(url, params)
 
 export default {
+  /** 用户名密码登录 */
+  login: (data: AuthLoginReq) => postRequest<AuthLoginResType>(urls.authLogin, data),
+  /** 用户名密码注册 */
+  register: (data: AuthRegisterReq) => postRequest<void>(urls.authRegister, data),
   /** 获取群成员列表 */
   getGroupList: (params?: any) => getRequest<ListResponse<UserItem>>(urls.getGroupUserList, params),
   /** 获取群成员统计 */

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, reactive, watchEffect } from 'vue'
 import { useRequest } from 'alova'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { Select, CloseBold, EditPen } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores/user'
 import { useCachedStore } from '@/stores/cached'
@@ -100,6 +100,15 @@ const onCancelEditName = async () => {
   editName.saving = false
   editName.isEdit = false
   editName.tempName = ''
+}
+
+const onLogout = async () => {
+  await ElMessageBox.confirm('确定退出当前账号吗？', '退出登录', {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    type: 'warning',
+  })
+  userStore.logout()
 }
 </script>
 
@@ -218,6 +227,8 @@ const onCancelEditName = async () => {
           </div>
         </li>
       </ul>
+
+      <ElButton class="logout-btn" plain type="danger" @click="onLogout">退出登录</ElButton>
     </div>
   </ElDialog>
 </template>

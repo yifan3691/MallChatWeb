@@ -1,32 +1,36 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-import wsIns from '@/utils/websocket'
-import { WsRequestMsgType } from '@/utils/wsType'
+import { consumeLoginDialogFlag } from '@/utils/auth'
 
-export enum LoginStatus {
-  Init,
-  Waiting,
-  Success,
+export enum AuthMode {
+  Login = 'login',
+  Register = 'register',
 }
 
 export const useWsLoginStore = defineStore('wsLogin', () => {
-  const loginQrCode = ref<string>()
-  const showLogin = ref(false)
-  const loginStatus = ref(LoginStatus.Init)
-  function getLoginQrCode() {
-    wsIns.send({ type: WsRequestMsgType.RequestLoginQrCode })
+  const showLogin = ref(consumeLoginDialogFlag())
+  const authMode = ref<AuthMode>(AuthMode.Login)
+
+  function openLogin() {
+    authMode.value = AuthMode.Login
+    showLogin.value = true
   }
+
+  function openRegister() {
+    authMode.value = AuthMode.Register
+    showLogin.value = true
+  }
+
   function resetLoginState() {
-    loginQrCode.value = undefined
-    loginStatus.value = LoginStatus.Init
+    authMode.value = AuthMode.Login
   }
 
   return {
-    loginQrCode,
-    loginStatus,
+    authMode,
     showLogin,
+    openLogin,
+    openRegister,
     resetLoginState,
-    getLoginQrCode,
   }
 })

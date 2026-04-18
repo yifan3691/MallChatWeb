@@ -14,11 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.login-qrcode-wrapper {
-  width: 328px;
-  height: 328px;
+  padding: 4px 4px 12px;
 }
 
 .login-logo {
@@ -33,18 +29,30 @@
   color: var(--font-light);
 }
 
-.login-desc {
-  display: flex;
-  align-items: center;
-  height: 32px;
+.login-tabs {
+  width: 100%;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.form-footer {
   margin-top: 16px;
+  font-size: 13px;
+  color: var(--font-light);
+  text-align: center;
 }
 
-.login-desc-icon {
-  margin-right: 8px;
+.form-footer-link {
+  color: var(--color-primary);
+  cursor: pointer;
 }
 
-.login-desc-bold {
-  font-weight: bold;
-  color: var(--color-wechat);
+@media only screen and (max-width: 639px) {
+  .login-box {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }

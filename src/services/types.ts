@@ -144,6 +144,23 @@ export type UserInfoType = {
   power?: number
 }
 
+export type AuthLoginReq = {
+  /** 用户名 */
+  username: string
+  /** 密码 */
+  password: string
+}
+
+export type AuthRegisterReq = AuthLoginReq & {
+  /** 昵称 */
+  nickname?: string
+}
+
+export type AuthLoginResType = Pick<UserInfoType, 'avatar' | 'name' | 'power' | 'uid'> & {
+  /** 用户的登录凭证，每次请求携带 */
+  token: string
+}
+
 export type BadgeType = {
   // 徽章描述
   describe: string

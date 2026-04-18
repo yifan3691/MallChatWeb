@@ -1,6 +1,8 @@
 // 本地配置到 .env 里面修改。生产配置在 .env.production 里面
 const prefix = import.meta.env.PROD ? import.meta.env.VITE_API_PREFIX : ''
 export default {
+  authLogin: `${prefix}/capi/user/public/auth/login`,
+  authRegister: `${prefix}/capi/user/public/auth/register`,
   getMemberStatistic: `${prefix}/capi/chat/public/member/statistic`,
   getUserInfoBatch: `${prefix}/capi/user/public/summary/userInfo/batch`,
   getBadgesBatch: `${prefix}/capi/user/public/badges/batch`,

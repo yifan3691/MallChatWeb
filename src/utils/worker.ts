@@ -17,6 +17,8 @@ let timer: null | number = null
 let lockReconnect = false
 // 重连🔐
 let token: null | string = null
+// 是否主动关闭
+let manualClose = false
 
 // 往 ws 发消息
 const connectionSend = (value: object) => {
@@ -41,6 +43,11 @@ const clearHeartPackTimer = () => {
 
 const onCloseHandler = () => {
   clearHeartPackTimer()
+  if (manualClose) {
+    lockReconnect = false
+    manualClose = false
+    return
+  }
   // 已经在连接中就不重连了
   if (lockReconnect) return
 
@@ -75,7 +82,6 @@ const onConnectError = () => {
 // ws 连接 close
 const onConnectClose = () => {
   onCloseHandler()
-  token = null
   postMsg({ type: 'close' })
 }
 // ws 连接成功
@@ -93,6 +99,12 @@ const initConnection = () => {
   connection?.removeEventListener('open', onConnectOpen)
   connection?.removeEventListener('close', onConnectClose)
   connection?.removeEventListener('error', onConnectError)
+  if (
+    connection &&
+    (connection.readyState === WebSocket.OPEN || connection.readyState === WebSocket.CONNECTING)
+  ) {
+    connection.close()
+  }
   // 建立链接
   // 本地配置到 .env 里面修改。生产配置在 .env.production 里面
   connection = new WebSocket(`${import.meta.env.VITE_WS_URL}${token ? `?token=${token}` : ''}`)
@@ -111,8 +123,29 @@ self.onmessage = (e: MessageEvent<string>) => {
   switch (type) {
     case 'initWS': {
       reconnectCount = 0
+      manualClose = false
       token = value
       initConnection()
+      break
+    }
+    case 'closeWS': {
+      reconnectCount = 0
+      lockReconnect = false
+      manualClose = true
+      token = null
+      clearHeartPackTimer()
+      if (timer) {
+        clearTimeout(timer)
+        timer = null
+      }
+      if (
+        connection &&
+        (connection.readyState === WebSocket.OPEN || connection.readyState === WebSocket.CONNECTING)
+      ) {
+        connection.close()
+      } else {
+        postMsg({ type: 'close' })
+      }
       break
     }
     case 'message': {
