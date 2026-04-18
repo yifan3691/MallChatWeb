@@ -16,7 +16,7 @@ concurrency:
 env:
   NODE_VERSION: 20
   PNPM_VERSION: 10.8.0
-  TARGET_PATH: /opt/1panel/www/sites/mallchat
+  TARGET_PATH: /home/ubuntu/www/sites/mallchat/index
 
 jobs:
   build-and-deploy:
