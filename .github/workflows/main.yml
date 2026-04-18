@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: 18
+  NODE_VERSION: 20
   PNPM_VERSION: 10.8.0
   TARGET_PATH: /opt/1panel/www/sites/mallchat
 

@@ -27,7 +27,7 @@ export default defineConfig({
       ],
       dts: 'src/components.d.ts',
     }),
-    Icons({ autoInstall: true }),
+    Icons(),
   ],
   resolve: {
     alias: [
