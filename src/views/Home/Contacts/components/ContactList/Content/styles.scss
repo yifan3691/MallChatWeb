@@ -1,12 +1,20 @@
 .contact-content {
   flex: 1;
-  background-color: var(--background-secondary);
-  border-radius: 8px;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 10%, rgba(125, 166, 255, 10%), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 8%), transparent 32%), rgba(15, 17, 24, 72%);
+  border: 1px solid rgba(255, 255, 255, 9%);
+  border-radius: 22px;
+  box-shadow: var(--shadow-line);
 }
 
 .contact-main {
   width: 400px;
-  margin: 30px auto;
+  padding: 26px;
+  margin: 44px auto;
+  background-color: rgba(255, 255, 255, 5%);
+  border: 1px solid rgba(255, 255, 255, 9%);
+  border-radius: 20px;
 }
 
 .contact-info-wrapper {
@@ -35,7 +43,7 @@
 
   &-name {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 800;
     color: var(--color-white);
   }
 

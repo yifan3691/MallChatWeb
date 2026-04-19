@@ -6,6 +6,8 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  background: rgba(255, 255, 255, 8%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 12%) inset, 0 10px 24px rgba(0, 0, 0, 18%);
   -webkit-user-drag: none;
 
   .status {
@@ -16,7 +18,9 @@
     width: 30%;
     height: 30%;
     background-color: var(--color-online);
+    border: 2px solid var(--background-1);
     border-radius: 50%;
+    box-shadow: 0 0 12px rgba(115, 214, 162, 72%);
   }
 
   img {

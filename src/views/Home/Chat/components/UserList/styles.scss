@@ -20,7 +20,7 @@
 
   &-box {
     position: relative;
-    margin-left: 20px;
+    margin-left: 0;
   }
 
   &-mask {
@@ -50,11 +50,14 @@
     bottom: 16px;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 212px;
     height: 100%;
-    padding: 8px 12px;
-    background-color: var(--background-secondary);
-    border-radius: 8px;
+    padding: 14px 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 8%), transparent 28%),
+      rgba(15, 17, 24, 72%);
+    border: 1px solid rgba(255, 255, 255, 9%);
+    border-radius: 22px;
+    box-shadow: var(--shadow-line);
     transition: transform 0.3s ease;
     transform: translateX(100%);
 
@@ -67,7 +70,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--font-light-1);
+    border-bottom: 1px solid rgba(255, 255, 255, 8%);
   }
 }
 

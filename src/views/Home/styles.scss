@@ -1,9 +1,30 @@
 .home {
   position: relative;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 10vh 0;
+  padding: 7vh 0;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 6vh;
+    right: 7vw;
+    z-index: 0;
+    width: 240px;
+    height: 240px;
+    pointer-events: none;
+    content: '';
+    background: linear-gradient(90deg, rgba(255, 255, 255, 14%) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 14%) 1px, transparent 1px);
+    background-size: 18px 18px;
+    border: 1px solid rgba(255, 255, 255, 10%);
+    opacity: 0.18;
+    transform: rotate(11deg);
+  }
 
   .video-play {
     position: absolute;
@@ -49,23 +70,58 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  width: 80vw;
-  height: 83vh;
+  width: min(1420px, 88vw);
+  height: min(860px, 86vh);
   margin: 0 auto;
+  overflow: hidden;
   color: var(--font-main);
-  background-color: var(--background-wrapper);
-  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 10%), transparent 28%),
+    var(--background-wrapper);
+  backdrop-filter: blur(24px) saturate(118%);
+  border: 1px solid rgba(255, 255, 255, 12%);
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(125, 166, 255, 8%);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 88px;
+    z-index: 1;
+    width: 1px;
+    height: 100%;
+    pointer-events: none;
+    content: '';
+    background: linear-gradient(180deg, transparent, rgba(125, 166, 255, 50%), transparent);
+  }
+
+  &::after {
+    position: absolute;
+    right: 24px;
+    bottom: 18px;
+    z-index: 0;
+    width: 160px;
+    height: 160px;
+    pointer-events: none;
+    content: '';
+    border-right: 1px solid rgba(255, 181, 71, 24%);
+    border-bottom: 1px solid rgba(255, 181, 71, 24%);
+    opacity: 0.65;
+  }
 }
 
 .footer {
   position: absolute;
-  bottom: 0;
+  bottom: 18px;
   left: 0;
   width: 100%;
-  padding: 12px;
+  padding: 0 12px;
   font-size: 12px;
-  color: var(--font-main);
+  color: rgba(238, 243, 255, 54%);
   text-align: center;
+
+  a {
+    color: inherit;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -78,6 +134,11 @@
     width: 100%;
     height: 100%;
     border-radius: 0;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 
   .footer {

@@ -1,8 +1,11 @@
 .chat-box {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex: 1;
   align-items: stretch;
-  padding: 20px 20px 20px 0;
+  min-width: 0;
+  padding: 18px 18px 18px 0;
   overflow: hidden;
 }
 
@@ -12,16 +15,23 @@
   flex: 1;
   align-items: center;
   justify-content: center;
+  min-width: 0;
+  margin-right: 18px;
 }
 
 .chat {
   display: flex;
   flex: 1;
   flex-direction: column;
+  min-width: 0;
   height: 100%;
   padding-bottom: 16px;
-  background-color: var(--background-secondary);
-  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 8%), transparent 30%),
+    rgba(15, 17, 24, 68%);
+  border: 1px solid rgba(255, 255, 255, 9%);
+  border-radius: 22px;
+  box-shadow: var(--shadow-line);
 }
 
 .chat-edit {
@@ -308,7 +318,7 @@
 
 @media only screen and (max-width: 640px) {
   .chat-box {
-    padding: 8px 0 0;
+    padding: 8px 10px 0;
   }
 
   .chat-wrapper {

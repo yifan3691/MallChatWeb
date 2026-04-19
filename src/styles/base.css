@@ -1,45 +1,49 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --color-primary: #1d90f5;
-  --color-link: #002aff;
-  --color-wechat: #2aae67;
-  --color-online: greenyellow;
+  --color-primary: #7da6ff;
+  --color-link: #b7caff;
+  --color-wechat: #28c76f;
+  --color-online: #73d6a2;
   --color-white: #fff;
-  --color-gold: #c59512;
-  --color-light-1: #bebebe;
-  --color-light-2: #dedfe0;
-  --color-light-3: #e9e9eb;
-  --color-light-4: #f5f5f5;
+  --color-gold: #ffb547;
+  --color-light-1: #cbd5e8;
+  --color-light-2: #dde5f4;
+  --color-light-3: #eef3ff;
+  --color-light-4: #f7f8fc;
+  --color-accent: #ff805d;
+  --color-amber: #ffb547;
 
   /* font */
-  --font-placeholder: #a8abb2;
-  --font-main: #fff;
-  --font-base: #333;
-  --font-gray: #666;
-  --font-light: #999;
-  --font-light-1: #eee;
+  --font-placeholder: #8793aa;
+  --font-main: #eef3ff;
+  --font-base: #171b24;
+  --font-gray: #9ca8bc;
+  --font-light: #a2acc0;
+  --font-light-1: #dce5f7;
   --font-pink: #fe2c55;
 
   /* 背景色 */
-  --background-indigo: #2c3e50;
-  --background-wrapper: #272a37;
-  --background-secondary: #323644;
+  --background-indigo: #24375f;
+  --background-wrapper: rgba(16, 18, 25, 88%);
+  --background-secondary: rgba(25, 29, 39, 88%);
   --background-black-half: rgba(0, 0, 0, 50%);
-  --background-dark: rgba(39, 42, 55, 40%);
-  --background-mask: rgba(255, 255, 255, 20%);
-  --background-1: #2b2d31;
-  --background-2: #383c4b;
-  --background-3: #424656;
-  --background-4: #efe2bb;
+  --background-dark: rgba(10, 12, 18, 58%);
+  --background-mask: rgba(238, 243, 255, 10%);
+  --background-1: #101219;
+  --background-2: #1f2330;
+  --background-3: #2a3040;
+  --background-4: #fff1c4;
 
   /* hover */
-  --hover-primary: #2287e1;
-  --hover-bg-1: #484d5f;
-  --hover-bg-2: rgba(0, 0, 0, 20%);
+  --hover-primary: #9fbbff;
+  --hover-bg-1: rgba(125, 166, 255, 16%);
+  --hover-bg-2: rgba(255, 255, 255, 8%);
 
   /* border */
-  --border-base: var(--color-background-1);
-  --border-pink: #b52c47;
+  --border-base: rgba(255, 255, 255, 10%);
+  --border-pink: #ff6b8b;
+  --shadow-soft: 0 24px 90px rgba(0, 0, 0, 42%);
+  --shadow-line: 0 1px 0 rgba(255, 255, 255, 8%) inset;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -62,11 +66,12 @@
 body {
   min-height: 100vh;
   padding: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Avenir Next', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI',
+    'Microsoft YaHei', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background: var(--color-background);
+  color: var(--font-main);
+  background: #08090d;
   transition: color 0.5s, background-color 0.5s;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
