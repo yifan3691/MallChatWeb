@@ -1,17 +1,21 @@
 .chat-message {
   display: none;
   padding: 0;
-  margin: 20px 10px;
+  margin: 20px 14px 20px 18px;
   overflow-y: auto;
 
   &-item {
-    width: 280px;
-    height: 60px;
-    padding: 12px 10px;
+    width: 304px;
+    min-height: 72px;
+    padding: 12px;
     color: var(--color-light-3);
     cursor: pointer;
-    background-color: var(--background-secondary);
-    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 8%), transparent 58%),
+      rgba(255, 255, 255, 4%);
+    border: 1px solid rgba(255, 255, 255, 7%);
+    border-radius: 18px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+      transform 0.2s ease;
 
     .item-wrapper {
       position: relative;
@@ -29,20 +33,23 @@
     .message-info {
       padding: 0 10px;
       margin-right: auto;
+      overflow: hidden;
 
       .person {
         font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0;
       }
 
       .tag {
         display: inline-block;
-        padding: 1px 4px;
+        padding: 1px 6px;
         margin-left: 4px;
         font-size: 12px;
         font-weight: bold;
-        color: var(--color-gold);
-        background-color: var(--background-4);
-        border-radius: 4px;
+        color: #2b1a04;
+        background-color: var(--color-amber);
+        border-radius: 999px;
         transform: scale(0.8);
       }
 
@@ -51,7 +58,7 @@
         width: 100%;
         overflow: hidden;
         font-size: 12px;
-        color: var(--font-light);
+        color: rgba(205, 214, 232, 66%);
         text-overflow: ellipsis;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
@@ -61,26 +68,32 @@
 
     .message-time {
       font-size: 12px;
-      color: var(--font-light);
+      color: rgba(205, 214, 232, 46%);
       white-space: nowrap;
     }
 
     &:hover {
-      background-color: var(--hover-bg-1);
-      transition: 0.3s;
+      background-color: rgba(125, 166, 255, 10%);
+      border-color: rgba(125, 166, 255, 24%);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 18%);
+      transform: translateX(2px);
     }
 
     &:not(:first-child) {
-      margin-top: 4px;
+      margin-top: 8px;
     }
 
     &.active {
-      background-color: var(--background-indigo);
+      color: var(--font-main);
+      background: linear-gradient(135deg, rgba(125, 166, 255, 20%), rgba(255, 181, 71, 8%)),
+        rgba(255, 255, 255, 6%);
+      border-color: rgba(125, 166, 255, 42%);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 24%), 4px 0 0 var(--color-primary) inset;
     }
   }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1024px) {
   .chat-message {
     display: block;
   }

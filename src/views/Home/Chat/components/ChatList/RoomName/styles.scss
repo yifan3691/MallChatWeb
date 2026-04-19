@@ -1,18 +1,33 @@
 .room-name {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 50px;
-  padding: 0 10px;
-  background: var(--background-mask);
-  border-radius: 8px 8px 0 0;
+  min-height: 62px;
+  padding: 0 20px;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(125, 166, 255, 16%), transparent 34%),
+    rgba(255, 255, 255, 5%);
+  border-bottom: 1px solid rgba(255, 255, 255, 8%);
+  border-radius: 22px 22px 0 0;
 
-  .setting {
-    font-size: 13px;
-    cursor: pointer;
+  .name {
+    max-width: 70%;
+    overflow: hidden;
+    font-size: 17px;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    letter-spacing: 0;
+    white-space: nowrap;
 
-    &:hover {
-      color: var(--hover-primary);
+    &::before {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 10px;
+      vertical-align: 2px;
+      content: '';
+      background: var(--color-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 18px rgba(125, 166, 255, 90%);
     }
   }
 }

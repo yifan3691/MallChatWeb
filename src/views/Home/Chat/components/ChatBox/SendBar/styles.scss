@@ -27,7 +27,7 @@
 
 .chat-edit {
   position: relative;
-  padding: 0 16px;
+  padding: 0 20px;
   word-break: break-all;
 
   .m-input {
@@ -40,25 +40,34 @@
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 40px;
-    padding: 2px 6px;
+    min-height: 48px;
+    padding: 6px 8px;
     font-size: 14px;
     color: var(--font-main);
-    background-color: var(--background-3);
-    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 8%), transparent 48%),
+      rgba(10, 12, 18, 64%);
+    border: 1px solid rgba(255, 255, 255, 10%);
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 18%);
 
     .action {
       display: flex;
       align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
       padding: 4px;
       line-height: 1;
       cursor: pointer;
-      background-color: var(--background-3);
-      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 7%);
+      border-radius: 12px;
+      transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
     }
 
     .action:hover {
-      background-color: var(--hover-bg-2);
+      color: var(--color-primary);
+      background-color: rgba(125, 166, 255, 15%);
+      transform: translateY(-1px);
     }
 
     .send {
@@ -66,7 +75,7 @@
     }
 
     .is-edit {
-      background-color: var(--background-2);
+      background-color: rgba(125, 166, 255, 18%);
     }
 
     .is-edit .send {
@@ -85,7 +94,7 @@
       height: 1.2em;
       margin: 0 4px;
       vertical-align: middle;
-      border-left: 1px solid var(--background-2);
+      border-left: 1px solid rgba(255, 255, 255, 10%);
     }
 
     :deep(.el-textarea__inner) {
@@ -93,7 +102,7 @@
       font-size: 14px;
       color: var(--font-main);
       resize: none;
-      background-color: var(--background-3);
+      background-color: transparent;
       border: none;
       box-shadow: none;
       transition: 0.2s;
@@ -130,7 +139,7 @@
         font-weight: bolder;
         line-height: 2em;
         color: #ffb357;
-        box-shadow: 0 0 12px 10px var(--background-2);
+        box-shadow: 0 0 12px 10px rgba(255, 181, 71, 16%);
         transition: all 0.2s ease;
         transform: scaleY(1.1);
       }
@@ -147,8 +156,9 @@
     color: var(--font-light);
     word-wrap: break-all;
     white-space: pre-wrap;
-    background-color: var(--background-3);
-    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 7%);
+    border: 1px solid rgba(255, 255, 255, 8%);
+    border-radius: 14px;
   }
 
   .reply-msg-content {
@@ -209,7 +219,7 @@
     }
 
     .active {
-      background-color: var(--background-3);
+      background-color: rgba(125, 166, 255, 15%);
     }
   }
 
@@ -245,7 +255,7 @@
       }
 
       &:hover {
-        box-shadow: var(--el-box-shadow-light);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 22%);
       }
     }
 
@@ -281,7 +291,7 @@
   border-radius: 4px;
 
   &:hover {
-    background-color: var(--background-3);
+    background-color: rgba(125, 166, 255, 15%);
   }
 }
 
